@@ -1,3 +1,4 @@
 # ignore the datasets
 datasets/
 lightgbm_model.onnx
+scaler.pkl
