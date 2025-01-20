@@ -13,8 +13,11 @@ onnx_path = "lightgbm_model.onnx"
 session = ort.InferenceSession(onnx_path)
 print('Model loaded...')
 
-input_data = pd.read_csv(r'datasets\imputed_train_data.csv', nrows=590540)
-input_data = input_data.drop(columns=["isFraud"])
+file_name = r'datasets\imputed_train_data.csv'
+
+if file_name == r'datasets\imputed_train_data.csv':
+    input_data = pd.read_csv(file_name, nrows=10000)
+    input_data = input_data.drop(columns=["isFraud"])
 
 input_data = scaler.transform(input_data)  # ensures this scales the same way as during training
 input_array = np.array(input_data, dtype=np.float32)
