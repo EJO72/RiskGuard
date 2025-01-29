@@ -1,3 +1,4 @@
 # ignore the datasets
 datasets/
 scaler.pkl
+RiskGuardWCS.pem
